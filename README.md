@@ -8,4 +8,6 @@ required that I build and configure a complex network on physical equipment.
 
 
 
+## License
 
+GNU General Public License v3.0
