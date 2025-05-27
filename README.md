@@ -6,6 +6,10 @@ CCNA: Switching, Routing, and Wireless Essentials course.
 The case study was designed to test skills gained throughout the course and
 required that I build and configure a complex network on physical equipment.
 
+## Network Topology
+
+![Network Topology Diagram](topology.png)
+
 
 
 ## License
