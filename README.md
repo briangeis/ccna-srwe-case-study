@@ -447,8 +447,8 @@ nameserver 8.8.8.8
 
 **The original case study required the following deliverables:**
 
-* Provide configurations from all devices
-* Demonstrate connectivity from all hosts
+* Provide configurations from all Cisco devices
+* Demonstrate connectivity from all endpoint hosts
 * Demonstrate the floating static default route is working:
   - Send an extended ping from Admin-PC to a remote site
   - Administratively shut down the link on R2 G0/1
