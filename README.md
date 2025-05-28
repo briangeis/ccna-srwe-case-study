@@ -407,17 +407,17 @@ required that I build and configure a complex network on physical equipment.
 #### Switch Security Configuration
 
 * Enabled PortFast and BPDU Guard on active ports
-* Set port security on active ports:
+* Set port security on active ports as follows:
   - Accept a maximum of 4 MAC addresses
   - On violation, drop frames, log it, and send alert
   - Aging time of 10 minutes
   - Sticky MAC address learning
 * Activated Dynamic ARP Inspection (DAI) globally
-* Configure links to router as trusted
+* Configure links to routers as trusted
 
-## GNS3 Alpine Linux Configuration
+## Alpine Linux Host Configuration
 
-Configured host names:
+Set host names:
 ```
 echo "HOSTNAME" > /etc/hostname
 hostname -F /etc/hostname
