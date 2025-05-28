@@ -40,7 +40,7 @@ required that I build and configure a complex network on physical equipment.
 
 ## Addressing Table
 
-<table width="100%">
+<table>
   <tr>
     <th>Device</th>
     <th>GNS3 Interface</th>
@@ -204,7 +204,7 @@ required that I build and configure a complex network on physical equipment.
 * Configured interface addressing per Addressing Table
 * Activated used interfaces only
 
-### Special Router Configuration
+### Extended Router Configuration
 
 * Configured inter-VLAN routing on R2 for all R2 switches
 * Configured HSRP for VLAN 10 only with priority and preempt given to R1
@@ -242,7 +242,7 @@ required that I build and configure a complex network on physical equipment.
 * Implemented best practices for all unused switchports
 * Activated used interfaces only
 
-### Special Switch Configuration
+### Extended Switch Configuration
 
 <details open>
 
