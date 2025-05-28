@@ -10,6 +10,18 @@ required that I build and configure a complex network on physical equipment.
 
 ![Network Topology Diagram](topology.png)
 
+## Skills Demonstrated
+
+* Cisco router and switch configuration
+* VLAN and switchport VLAN membership configuration
+* EtherChannel configuration
+* Static trunking and Dynamic Trunking Protocol (DTP)
+* Inter-VLAN routing (router-on-a-stick) configuration
+* IPv4 floating static, default, and host routes
+* Hot Standby Router Protocol (HSRP) configuration
+* Dynamic Host Configuration Protocol (DHCP) pools and scopes
+* Switch security, including port security, Dynamic ARP Inspection (DAI),
+  PortFast, and BPDU Guard
 
 
 ## License
