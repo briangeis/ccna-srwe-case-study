@@ -40,7 +40,7 @@ required that I build and configure a complex network on physical equipment.
 
 ## Addressing Table
 
-<table>
+<table width="100%">
   <tr>
     <th>Device</th>
     <th>GNS3 Interface</th>
