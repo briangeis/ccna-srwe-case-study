@@ -211,11 +211,7 @@ required that I build and configure a complex network on physical equipment.
 * Configured EDGE router as DHCP server
 * Created DHCP pool for each VLAN
 
-### Route Configuration
-
-<details open>
-
-<summary>EDGE Routes</summary>
+### EDGE Routes
 
 * Default route via G0/3 (Packet Tracer: S0/0/0)
 * Static route for 192.168.10.0/24 set to 192.168.1.2
@@ -223,27 +219,17 @@ required that I build and configure a complex network on physical equipment.
 * Static route for 192.168.32.0/19 set to 192.168.2.2
 * Floating static route for 192.168.32.0/19 set to 192.168.1.2 with AD of 10
 
-</details>
-
-<details open>
-
-<summary>R1 Routes</summary>
+### R1 Routes
 
 * Default route via G0/1
 * Floating default route via G0/3 (Packet Tracer: S0/0/0) with AD of 10
 * Summarized static route to R2 VLANs
 
-</details>
-
-<details open>
-
-<summary>R2 Routes</summary>
+### R2 Routes
 
 * Default route via G0/1
 * Floating default via G0/3 (Packet Tracer: S0/0/0) with AD of 10
 * Summarized static route to R1 VLAN
-
-</details>
 
 ## Switch Configuration
 
@@ -256,7 +242,7 @@ required that I build and configure a complex network on physical equipment.
 * Implemented best practices for all unused switchports
 * Activated used interfaces only
 
-### VLAN Configuration
+### Special Switch Configuration
 
 <details open>
 
@@ -272,9 +258,9 @@ required that I build and configure a complex network on physical equipment.
 
 </details>
 
-<details open>
+<details>
 
-<summary>Port Assignment</summary>
+<summary>VLAN Port Assignment</summary>
 
 <table>
   <tr>
@@ -357,11 +343,9 @@ required that I build and configure a complex network on physical equipment.
 
 </details>
 
-### Special Switch Configuration
+<details>
 
-<details open>
-
-<summary>EtherChannel Information</summary>
+<summary>EtherChannel Port Assignment</summary>
 
 <table>
   <tr>
