@@ -175,22 +175,22 @@ required that I build and configure a complex network on physical equipment.
   <tr>
     <td>Accounting-PC</td>
     <td colspan="2">eth0 Network Interface</td>
-    <td colspan="2">DHCP</td>
+    <td colspan="2">DHCP Pool R2-VLAN-32</td>
   </tr>
   <tr>
     <td>Marketing-PC</td>
     <td colspan="2">eth0 Network Interface</td>
-    <td colspan="2">DHCP</td>
+    <td colspan="2">DHCP Pool R2-VLAN-36</td>
   </tr>
   <tr>
     <td>Logistics-PC</td>
     <td colspan="2">eth0 Network Interface</td>
-    <td colspan="2">DHCP</td>
+    <td colspan="2">DHCP Pool R2-VLAN-40</td>
   </tr>
   <tr>
     <td>Management-PC</td>
     <td colspan="2">eth0 Network Interface</td>
-    <td colspan="2">DHCP</td>
+    <td colspan="2">DHCP Pool R2-VLAN-60</td>
   </tr>
 </table>
 
@@ -371,7 +371,7 @@ required that I build and configure a complex network on physical equipment.
     <th>PacketTracer Ports</th>
   </tr>
   <tr>
-    <td style="text-align: center;" rowspan="2">1</td>
+    <td rowspan="2">Port Channel 1</td>
     <td>R2-LAN-MAIN-SW</td>
     <td>G3/2, G3/3</td>
     <td>F0/23, F0/24</td>
@@ -382,7 +382,7 @@ required that I build and configure a complex network on physical equipment.
     <td>F0/23, F0/24</td>
   </tr>
   <tr>
-    <td style="text-align: center;" rowspan="2">2</td>
+    <td rowspan="2">Port Channel 2</td>
     <td>R2-LAN-MAIN-SW</td>
     <td>G3/0, G3/1</td>
     <td>F0/21, F0/22</td>
@@ -393,7 +393,7 @@ required that I build and configure a complex network on physical equipment.
     <td>F0/21, F0/22</td>
   </tr>
   <tr>
-    <td style="text-align: center;" rowspan="2">3</td>
+    <td rowspan="2">Port Channel 3</td>
     <td>R2-LAN-SW-FL1</td>
     <td>G3/0, G3/1</td>
     <td>F0/21, F0/22</td>
@@ -431,10 +431,33 @@ required that I build and configure a complex network on physical equipment.
 * Activated Dynamic ARP Inspection (DAI) globally
 * Configure links to router as trusted
 
+## GNS3 Alpine Linux Configuration
 
+Configured host names:
+```
+echo "HOSTNAME" > /etc/hostname
+hostname -F /etc/hostname
+```
 
+Configured `/etc/network/interfaces` for DHCP hosts:
+```
+auto eth0
+iface eth0 inet dhcp
+```
 
+Configured `/etc/network/interfaces` for `Admin-PC`:
+```
+auto eth0
+iface eth0 inet static
+address 192.168.10.10
+netmask 255.255.255.0
+gateway 192.168.10.1
+```
 
+Configured `/etc/resolv.conf` for `Admin-PC`:
+```
+nameserver 8.8.8.8
+```
 
 
 
