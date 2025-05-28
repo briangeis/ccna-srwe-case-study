@@ -459,7 +459,20 @@ Configured `/etc/resolv.conf` for `Admin-PC`:
 nameserver 8.8.8.8
 ```
 
+## Deliverables
 
+**The original case study required the following deliverables:**
+
+* Provide configurations from all devices
+* Demonstrate connectivity from all hosts
+* Demonstrate the floating static default route is working:
+  - Send an extended ping from Admin-PC to a remote site
+  - Administratively shut down the link on R2 G0/1
+  - The extended ping should continue with few dropped packets
+* Demonstrate HSRP functionality:
+  - Run a traceroute from Admin-PC to the ISP router
+  - Administratively shut down the link on R1 G0/0
+  - Rerun the traceroute and confirm the path uses R2
 
 ## License
 
