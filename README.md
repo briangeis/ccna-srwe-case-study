@@ -211,7 +211,7 @@ required that I build and configure a complex network on physical equipment.
 * Configured EDGE router as DHCP server
 * Created DHCP pool for each VLAN
 
-### EDGE Routes
+#### EDGE Routes
 
 * Default route via G0/3 (Packet Tracer: S0/0/0)
 * Static route for 192.168.10.0/24 set to 192.168.1.2
@@ -219,13 +219,13 @@ required that I build and configure a complex network on physical equipment.
 * Static route for 192.168.32.0/19 set to 192.168.2.2
 * Floating static route for 192.168.32.0/19 set to 192.168.1.2 with AD of 10
 
-### R1 Routes
+#### R1 Routes
 
 * Default route via G0/1
 * Floating default route via G0/3 (Packet Tracer: S0/0/0) with AD of 10
 * Summarized static route to R2 VLANs
 
-### R2 Routes
+#### R2 Routes
 
 * Default route via G0/1
 * Floating default via G0/3 (Packet Tracer: S0/0/0) with AD of 10
