@@ -194,6 +194,249 @@ required that I build and configure a complex network on physical equipment.
   </tr>
 </table>
 
+## Router Configuration
+
+### Basic Router Configuration
+
+* Set header MOTD message with this project info
+* Set encrypted console/privileged EXEC passwords (cisco123)
+* Configured remote access to the VTY lines
+* Configured interface addressing per Addressing Table
+* Activated used interfaces only
+
+### Special Router Configuration
+
+* Configured inter-VLAN routing on R2 for all R2 switches
+* Configured HSRP for VLAN 10 only with priority and preempt given to R1
+* Configured EDGE router as DHCP server
+* Created DHCP pool for each VLAN
+
+### Route Configuration
+
+<details open>
+
+<summary>EDGE Routes</summary>
+
+* Default route via G0/3 (Packet Tracer: S0/0/0)
+* Static route for 192.168.10.0/24 set to 192.168.1.2
+* Floating static route for 192.168.10.0/24 set to 192.168.2.2 with AD of 10
+* Static route for 192.168.32.0/19 set to 192.168.2.2
+* Floating static route for 192.168.32.0/19 set to 192.168.1.2 with AD of 10
+
+</details>
+
+<details open>
+
+<summary>R1 Routes</summary>
+
+* Default route via G0/1
+* Floating default route via G0/3 (Packet Tracer: S0/0/0) with AD of 10
+* Summarized static route to R2 VLANs
+
+</details>
+
+<details open>
+
+<summary>R2 Routes</summary>
+
+* Default route via G0/1
+* Floating default via G0/3 (Packet Tracer: S0/0/0) with AD of 10
+* Summarized static route to R1 VLAN
+
+</details>
+
+## Switch Configuration
+
+### Basic Switch Configuration
+
+* Set header MOTD message with this project info
+* Set encrypted console/privileged EXEC passwords (cisco123)
+* Configured remote access to the switch SVI (SSH only)
+* Configured interface addressing per Addressing Table
+* Implemented best practices for all unused switchports
+* Activated used interfaces only
+
+### VLAN Configuration
+
+<details open>
+
+<summary>VLAN Information</summary>
+
+| VLAN | Name       | IP Network   | Subnet Mask   |
+| ---- | ---------- | ------------ | ------------- |
+| 10   | Admin      | 192.168.10.0 | 255.255.255.0 |
+| 32   | Accounting | 192.168.32.0 | 255.255.255.0 |
+| 36   | Marketing  | 192.168.36.0 | 255.255.255.0 |
+| 40   | Logistics  | 192.168.40.0 | 255.255.255.0 |
+| 60   | Management | 192.168.60.0 | 255.255.255.0 |
+
+</details>
+
+<details open>
+
+<summary>Port Assignment</summary>
+
+<table>
+  <tr>
+    <th>Device</th>
+    <th>VLAN</th>
+    <th>VLAN Name</th>
+    <th>GNS3 Ports</th>
+    <th>PacketTracer Ports</th>
+  </tr>
+  <tr>
+    <td rowspan="4">R2-LAN-MAIN-SW</td>
+    <td>32</td>
+    <td>Accounting</td>
+    <td>G0/0-1</td>
+    <td>F0/1-5</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>Marketing</td>
+    <td>G0/2-3</td>
+    <td>F0/6-10</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>Logistics</td>
+    <td>G1/0-1</td>
+    <td>F0/11-15</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>Management Native</td>
+    <td>G1/2-3</td>
+    <td>F0/16-19</td>
+  </tr>
+  <tr>
+    <td rowspan="3">R2-LAN-SW-FL1</td>
+    <td>36</td>
+    <td>Marketing</td>
+    <td>G0/2-3</td>
+    <td>F0/7-10</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>Logistics</td>
+    <td>G1/0-1</td>
+    <td>F0/11-15</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>Management Native</td>
+    <td>G1/2-3</td>
+    <td>F0/16-19</td>
+  </tr>
+  <tr>
+    <td rowspan="4">R2-LAN-SW-FL2</td>
+    <td>32</td>
+    <td>Accounting</td>
+    <td>G0/0-1</td>
+    <td>F0/1-5</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>Marketing</td>
+    <td>G0/2-3</td>
+    <td>F0/6-10</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>Logistics</td>
+    <td>G1/0-1</td>
+    <td>F0/11-15</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>Management Native</td>
+    <td>G1/2-3</td>
+    <td>F0/19</td>
+  </tr>
+</table>
+
+</details>
+
+### Special Switch Configuration
+
+<details open>
+
+<summary>EtherChannel Information</summary>
+
+<table>
+  <tr>
+    <th>Channel Group</th>
+    <th>Devices in Group</th>
+    <th>GNS3 Ports</th>
+    <th>PacketTracer Ports</th>
+  </tr>
+  <tr>
+    <td style="text-align: center;" rowspan="2">1</td>
+    <td>R2-LAN-MAIN-SW</td>
+    <td>G3/2, G3/3</td>
+    <td>F0/23, F0/24</td>
+  </tr>
+  <tr>
+    <td>R2-LAN-SW-FL1</td>
+    <td>G3/2, G3/3</td>
+    <td>F0/23, F0/24</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;" rowspan="2">2</td>
+    <td>R2-LAN-MAIN-SW</td>
+    <td>G3/0, G3/1</td>
+    <td>F0/21, F0/22</td>
+  </tr>
+  <tr>
+    <td>R2-LAN-SW-FL2</td>
+    <td>G3/0, G3/1</td>
+    <td>F0/21, F0/22</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;" rowspan="2">3</td>
+    <td>R2-LAN-SW-FL1</td>
+    <td>G3/0, G3/1</td>
+    <td>F0/21, F0/22</td>
+  </tr>
+  <tr>
+    <td>R2-LAN-SW-FL2</td>
+    <td>G3/2, G3/3</td>
+    <td>F0/23, F0/24</td>
+  </tr>
+</table>
+
+</details>
+
+#### EtherChannel Configuration
+
+* Created EtherChannels using Cisco LACP protocol
+* Configured the port channel interfaces as static trunks
+* Configured R2-LAN-MAIN-SW with static trunk to R2
+* Set Management VLAN as the native VLAN on all switches
+* Disabled DTP negotiation
+
+#### STP Configuration
+
+* Set R1-LAN-SW-FL1 as root for VLAN 10
+* Set R2-LAN-SW-MAIN as the root for all other VLANs
+
+#### Switch Security Configuration
+
+* Enabled PortFast and BPDU Guard on active ports
+* Set port security on active ports:
+  - Accept a maximum of 4 MAC addresses
+  - On violation, drop frames, log it, and send alert
+  - Aging time of 10 minutes
+  - Sticky MAC address learning
+* Activated Dynamic ARP Inspection (DAI) globally
+* Configure links to router as trusted
+
+
+
+
+
+
+
 
 ## License
 
