@@ -1,0 +1,25 @@
+/ # hostname
+Marketing-PC
+/ # ping -c 20 github.com
+PING github.com (140.82.113.3): 56 data bytes
+64 bytes from 140.82.113.3: seq=0 ttl=252 time=85.898 ms
+64 bytes from 140.82.113.3: seq=1 ttl=252 time=103.157 ms
+64 bytes from 140.82.113.3: seq=2 ttl=252 time=98.327 ms
+64 bytes from 140.82.113.3: seq=3 ttl=252 time=85.060 ms
+64 bytes from 140.82.113.3: seq=4 ttl=252 time=40.241 ms
+64 bytes from 140.82.113.3: seq=5 ttl=252 time=52.520 ms
+64 bytes from 140.82.113.3: seq=6 ttl=252 time=74.319 ms
+64 bytes from 140.82.113.3: seq=7 ttl=252 time=79.440 ms
+64 bytes from 140.82.113.3: seq=8 ttl=252 time=86.721 ms
+64 bytes from 140.82.113.3: seq=13 ttl=251 time=95.538 ms
+64 bytes from 140.82.113.3: seq=14 ttl=251 time=108.022 ms
+64 bytes from 140.82.113.3: seq=15 ttl=251 time=83.892 ms
+64 bytes from 140.82.113.3: seq=16 ttl=251 time=88.089 ms
+64 bytes from 140.82.113.3: seq=17 ttl=251 time=68.210 ms
+64 bytes from 140.82.113.3: seq=18 ttl=251 time=93.097 ms
+64 bytes from 140.82.113.3: seq=19 ttl=251 time=58.673 ms
+
+--- github.com ping statistics ---
+20 packets transmitted, 16 packets received, 20% packet loss
+round-trip min/avg/max = 40.241/81.325/108.022 ms
+/ # 

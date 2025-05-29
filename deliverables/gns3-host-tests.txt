@@ -1,0 +1,128 @@
+/ # hostname
+Admin-PC
+/ # ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 02:42:03:DE:C4:00  
+          inet addr:192.168.10.10  Bcast:0.0.0.0  Mask:255.255.255.0
+          inet6 addr: fe80::42:3ff:fede:c400/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:313 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:32 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:25012 (24.4 KiB)  TX bytes:2728 (2.6 KiB)
+
+/ # ping -c 5 github.com
+PING github.com (140.82.112.4): 56 data bytes
+64 bytes from 140.82.112.4: seq=0 ttl=252 time=58.561 ms
+64 bytes from 140.82.112.4: seq=1 ttl=252 time=61.618 ms
+64 bytes from 140.82.112.4: seq=2 ttl=252 time=43.777 ms
+64 bytes from 140.82.112.4: seq=3 ttl=252 time=56.658 ms
+64 bytes from 140.82.112.4: seq=4 ttl=252 time=70.373 ms
+
+--- github.com ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 43.777/58.197/70.373 ms
+/ # 
+
+####################################################################
+
+/ # hostname
+Accounting-PC
+/ # ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 02:42:64:54:DD:00  
+          inet addr:192.168.32.16  Bcast:0.0.0.0  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:42 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:19 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3515 (3.4 KiB)  TX bytes:2946 (2.8 KiB)
+
+/ # ping -c 5 github.com
+PING github.com (140.82.112.4): 56 data bytes
+64 bytes from 140.82.112.4: seq=0 ttl=252 time=190.947 ms
+64 bytes from 140.82.112.4: seq=1 ttl=252 time=115.837 ms
+64 bytes from 140.82.112.4: seq=2 ttl=252 time=80.088 ms
+64 bytes from 140.82.112.4: seq=3 ttl=252 time=97.972 ms
+64 bytes from 140.82.112.4: seq=4 ttl=252 time=108.939 ms
+
+--- github.com ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 80.088/118.756/190.947 ms
+/ # 
+
+####################################################################
+
+/ # hostname
+Marketing-PC
+/ # ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 02:42:52:55:90:00  
+          inet addr:192.168.36.16  Bcast:0.0.0.0  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:25 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2419 (2.3 KiB)  TX bytes:2408 (2.3 KiB)
+
+/ # ping -c 5 github.com
+PING github.com (140.82.113.4): 56 data bytes
+64 bytes from 140.82.113.4: seq=0 ttl=252 time=275.518 ms
+64 bytes from 140.82.113.4: seq=1 ttl=252 time=88.182 ms
+64 bytes from 140.82.113.4: seq=2 ttl=252 time=89.833 ms
+64 bytes from 140.82.113.4: seq=3 ttl=252 time=89.245 ms
+64 bytes from 140.82.113.4: seq=4 ttl=252 time=66.064 ms
+
+--- github.com ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 66.064/121.768/275.518 ms
+/ # 
+
+####################################################################
+
+/ # hostname
+Logistics-PC
+/ # ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 02:42:25:43:70:00  
+          inet addr:192.168.40.16  Bcast:0.0.0.0  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:23 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2261 (2.2 KiB)  TX bytes:2310 (2.2 KiB)
+
+/ # ping -c 5 github.com
+PING github.com (140.82.114.4): 56 data bytes
+64 bytes from 140.82.114.4: seq=0 ttl=252 time=211.920 ms
+64 bytes from 140.82.114.4: seq=1 ttl=252 time=65.762 ms
+64 bytes from 140.82.114.4: seq=2 ttl=252 time=85.507 ms
+64 bytes from 140.82.114.4: seq=3 ttl=252 time=96.572 ms
+64 bytes from 140.82.114.4: seq=4 ttl=252 time=78.601 ms
+
+--- github.com ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 65.762/107.672/211.920 ms
+/ # 
+
+####################################################################
+
+/ # hostname
+Management-PC
+/ # ifconfig eth0
+eth0      Link encap:Ethernet  HWaddr 02:42:28:BD:D0:00  
+          inet addr:192.168.60.16  Bcast:0.0.0.0  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:23 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2261 (2.2 KiB)  TX bytes:2310 (2.2 KiB)
+
+/ # ping -c 5 github.com
+PING github.com (140.82.112.3): 56 data bytes
+64 bytes from 140.82.112.3: seq=0 ttl=252 time=260.122 ms
+64 bytes from 140.82.112.3: seq=1 ttl=252 time=91.187 ms
+64 bytes from 140.82.112.3: seq=2 ttl=252 time=43.693 ms
+64 bytes from 140.82.112.3: seq=3 ttl=252 time=62.211 ms
+64 bytes from 140.82.112.3: seq=4 ttl=252 time=70.717 ms
+
+--- github.com ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 43.693/105.586/260.122 ms
+/ #
