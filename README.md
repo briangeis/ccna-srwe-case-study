@@ -450,12 +450,12 @@ nameserver 8.8.8.8
 * Provide configurations from all Cisco devices
 * Demonstrate connectivity from all endpoint hosts
 * Demonstrate the floating static default route is working:
-  - Send an extended ping from Admin-PC to a remote site
-  - Administratively shut down the link on R2 G0/1
-  - The extended ping should continue with few dropped packets
+  - Send an extended ping from Marketing-PC to a remote site
+  - Break the link between R2 and EDGE
+  - The extended ping should continue with minimal dropped packets
 * Demonstrate HSRP functionality:
   - Run a traceroute from Admin-PC to the ISP router
-  - Administratively shut down the link on R1 G0/0
+  - Break the link between R1 and R1-LAN-SW-FL1
   - Rerun the traceroute and confirm the path uses R2
 
 ## License
