@@ -1,0 +1,201 @@
+EDGE#show running-config 
+Building configuration...
+
+Current configuration : 4806 bytes
+!
+! Last configuration change at 00:23:17 UTC Thu May 29 2025
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname EDGE
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 9 $9$o5BB/KNvWMb2j9$MjASeQ7TbNaTogW7KijaZ1FgYwqbOp2Sq5ggZq9NAig
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.15
+ip dhcp excluded-address 192.168.32.1 192.168.32.15
+ip dhcp excluded-address 192.168.36.1 192.168.36.15
+ip dhcp excluded-address 192.168.40.1 192.168.40.15
+ip dhcp excluded-address 192.168.60.1 192.168.60.15
+!
+ip dhcp pool R2-VLAN-10
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.3 
+ dns-server 8.8.8.8 
+ domain-name github.com/briangeis
+!         
+ip dhcp pool R2-VLAN-32
+ network 192.168.32.0 255.255.255.0
+ default-router 192.168.32.1 
+ dns-server 8.8.8.8 
+ domain-name github.com/briangeis
+!
+ip dhcp pool R2-VLAN-36
+ network 192.168.36.0 255.255.255.0
+ default-router 192.168.36.1 
+ dns-server 8.8.8.8 
+ domain-name github.com/briangeis
+!
+ip dhcp pool R2-VLAN-40
+ network 192.168.40.0 255.255.255.0
+ default-router 192.168.40.1 
+ dns-server 8.8.8.8 
+ domain-name github.com/briangeis
+!
+ip dhcp pool R2-VLAN-60
+ network 192.168.60.0 255.255.255.0
+ default-router 192.168.60.1 
+ dns-server 8.8.8.8 
+ domain-name github.com/briangeis
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Gigabit Link to R2
+ ip address 192.168.2.1 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ description Gigabit Link to R1
+ ip address 192.168.1.1 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ description Gigabit Link to ISP
+ ip address 200.1.1.2 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 200.1.1.1
+ip route 192.168.10.0 255.255.255.0 192.168.1.2
+ip route 192.168.10.0 255.255.255.0 192.168.2.2 10
+ip route 192.168.32.0 255.255.224.0 192.168.2.2
+ip route 192.168.32.0 255.255.224.0 192.168.1.2 10
+!
+ipv6 ioam timestamp
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner motd ^C
+
+BRIAN GEIS | CCNA-SRWE-CASE-STUDY
+Switching, Routing, & Wireless Essentials
+https://github.com/briangeis/ccna-srwe-case-study
+
+^C
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ password 7 030752180500701E1D
+ logging synchronous
+ login
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ password 7 104D000A061843595F
+ login
+ transport input none
+!
+no scheduler allocate
+!
+end

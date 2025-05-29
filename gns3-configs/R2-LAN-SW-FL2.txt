@@ -1,0 +1,305 @@
+R2-LAN-SW-FL2#show running-config 
+Building configuration...
+
+Current configuration : 7334 bytes
+!
+! Last configuration change at 20:37:32 UTC Wed May 28 2025
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname R2-LAN-SW-FL2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$d77j$fIc38VYMHM2cUE9Oz6IdU1
+!
+username admin secret 5 $1$dvXa$jDFyT7CapyT.ANdwk.fWs0
+no aaa new-model
+!
+!
+!         
+!
+!
+ip arp inspection validate src-mac dst-mac ip 
+!
+!
+!
+no ip domain-lookup
+ip domain-name github.com/briangeis
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+no cdp run
+!
+! 
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel2
+ description EtherChannel Link to R2-LAN-SW-MAIN
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Port-channel3
+ description EtherChannel Link to R2-LAN-SW-FL1
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet0/0
+ description Link to Accounting PC
+ switchport access vlan 32
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 4
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 0242.6454.dd00
+ switchport port-security aging time 10
+ switchport port-security
+ negotiation auto
+ no cdp enable
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/1
+ switchport access vlan 32
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet0/2
+ description Link to Marketing PC
+ switchport access vlan 36
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 4
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 0242.5255.9000
+ switchport port-security aging time 10
+ switchport port-security
+ negotiation auto
+ no cdp enable
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/3
+ switchport access vlan 36
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet1/0
+ switchport access vlan 40
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet1/1
+ switchport access vlan 40
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet1/2
+ switchport access vlan 60
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet1/3
+ switchport access vlan 60
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet2/0
+ switchport access vlan 999
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet2/1
+ switchport access vlan 999
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet2/2
+ switchport access vlan 999
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!
+interface GigabitEthernet2/3
+ switchport access vlan 999
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+ negotiation auto
+ no cdp enable
+!         
+interface GigabitEthernet3/0
+ description Port Channel 2
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+ no cdp enable
+ channel-group 2 mode active
+!
+interface GigabitEthernet3/1
+ description Port Channel 2
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+ no cdp enable
+ channel-group 2 mode active
+!
+interface GigabitEthernet3/2
+ description Port Channel 3
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+ no cdp enable
+ channel-group 3 mode active
+!
+interface GigabitEthernet3/3
+ description Port Channel 3
+ switchport access vlan 999
+ switchport trunk allowed vlan 10,32,36,40,60
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 60
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+ no cdp enable
+ channel-group 3 mode active
+!
+interface Vlan60
+ description Switched Virtual Interface (SVI)
+ ip address 192.168.60.6 255.255.255.0
+!
+ip default-gateway 192.168.60.1
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip ssh version 2
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+!
+!
+!
+!
+control-plane
+!         
+banner exec ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner incoming ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+          
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner login ^C
+IOSv - Cisco Systems Confidential -
+
+Supplemental End User License Restrictions
+
+This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+^C
+banner motd ^C
+
+BRIAN GEIS | CCNA-SRWE-CASE-STUDY
+Switching, Routing, & Wireless Essentials
+https://github.com/briangeis/ccna-srwe-case-study
+
+^C
+!
+line con 0
+ password 7 02050D4808095E731F
+ logging synchronous
+ login
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+end
