@@ -213,22 +213,22 @@ required that I build and configure a complex network on physical equipment.
 
 #### EDGE Routes
 
-* Default route via G0/3 (Packet Tracer: S0/0/0)
+* Default route set to 200.1.1.1
 * Static route for 192.168.10.0/24 set to 192.168.1.2
-* Floating static route for 192.168.10.0/24 set to 192.168.2.2 with AD of 10
+* Floating static route for 192.168.10.0/24 set to 192.168.2.2 with AD 10
 * Static route for 192.168.32.0/19 set to 192.168.2.2
-* Floating static route for 192.168.32.0/19 set to 192.168.1.2 with AD of 10
+* Floating static route for 192.168.32.0/19 set to 192.168.1.2 with AD 10
 
 #### R1 Routes
 
-* Default route via G0/1
-* Floating default route via G0/3 (Packet Tracer: S0/0/0) with AD of 10
+* Default route set to 192.168.1.1
+* Floating default route set to 192.168.3.1 with AD 10
 * Summarized static route to R2 VLANs
 
 #### R2 Routes
 
-* Default route via G0/1
-* Floating default via G0/3 (Packet Tracer: S0/0/0) with AD of 10
+* Default route set to 192.168.2.1
+* Floating default set to 192.168.3.2 with AD 10
 * Summarized static route to R1 VLAN
 
 ## Switch Configuration
@@ -435,7 +435,7 @@ auto eth0
 iface eth0 inet static
 address 192.168.10.10
 netmask 255.255.255.0
-gateway 192.168.10.1
+gateway 192.168.10.3
 ```
 
 Configured `/etc/resolv.conf` for `Admin-PC`:
