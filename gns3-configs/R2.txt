@@ -1,9 +1,9 @@
 R2#show running-config 
 Building configuration...
 
-Current configuration : 4587 bytes
+Current configuration : 2737 bytes
 !
-! Last configuration change at 00:19:59 UTC Thu May 29 2025
+! Last configuration change at 10:03:24 UTC Fri May 30 2025
 !
 version 15.9
 service timestamps debug datetime msec
@@ -141,33 +141,6 @@ ipv6 ioam timestamp
 !         
 control-plane
 !
-banner exec ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner incoming ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner login ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
 banner motd ^C
 
 BRIAN GEIS | CCNA-SRWE-CASE-STUDY
@@ -188,7 +161,7 @@ line aux 0
  logging synchronous
 line vty 0 4
  password 7 121A0C0411045D5679
- login
+ login    
  transport input none
 !
 no scheduler allocate
