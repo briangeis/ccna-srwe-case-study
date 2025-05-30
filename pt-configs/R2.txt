@@ -1,0 +1,139 @@
+R2#show running-config
+Building configuration...
+
+Current configuration : 2197 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R2
+!
+!
+!
+enable secret 5 $1$mERr$5.a6P4JqbNiMX01usIfka/
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn FTX152471TF-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Trunk Link to R2-LAN-SW-MAIN
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.10
+ description Default Gateway for VLAN 10
+ encapsulation dot1Q 10
+ ip address 192.168.10.2 255.255.255.0
+ ip helper-address 192.168.2.1
+ standby version 2
+ standby 1 ip 192.168.10.3
+!
+interface GigabitEthernet0/0.32
+ description Default Gateway for VLAN 32
+ encapsulation dot1Q 32
+ ip address 192.168.32.1 255.255.255.0
+ ip helper-address 192.168.2.1
+!
+interface GigabitEthernet0/0.36
+ description Default Gateway for VLAN 36
+ encapsulation dot1Q 36
+ ip address 192.168.36.1 255.255.255.0
+ ip helper-address 192.168.2.1
+!
+interface GigabitEthernet0/0.40
+ description Default Gateway for VLAN 40
+ encapsulation dot1Q 40
+ ip address 192.168.40.1 255.255.255.0
+ ip helper-address 192.168.2.1
+!
+interface GigabitEthernet0/0.60
+ description Default Gateway for VLAN 60
+ encapsulation dot1Q 60 native
+ ip address 192.168.60.1 255.255.255.0
+ ip helper-address 192.168.2.1
+!
+interface GigabitEthernet0/1
+ description Gigabit Link to EDGE
+ ip address 192.168.2.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Serial0/0/0
+ description Serial Link to R1
+ ip address 192.168.3.1 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 192.168.2.1 
+ip route 0.0.0.0 0.0.0.0 192.168.3.2 10
+ip route 192.168.10.0 255.255.255.0 192.168.3.2 
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^C
+
+BRIAN GEIS | CCNA-SRWE-CASE-STUDY
+Switching, Routing, & Wireless Essentials
+https://github.com/briangeis/ccna-srwe-case-study
+
+^C
+!
+!
+!
+!
+line con 0
+ password 7 0822455D0A16544541
+ logging synchronous
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password 7 0822455D0A16544541
+ login
+!
+!
+!
+end
