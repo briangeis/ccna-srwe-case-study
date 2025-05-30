@@ -1,0 +1,147 @@
+Admin-PC Connectivity Test:
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Link-local IPv6 Address.........: FE80::230:A3FF:FEA0:C52B
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.10.10
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.10.3
+
+C:\>ping 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=7ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 7ms, Average = 2ms
+
+#############################################################
+
+Accounting-PC Connectivity Test:
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: github.com/briangeis
+   Link-local IPv6 Address.........: FE80::2E0:B0FF:FE93:2045
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.32.16
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.32.1
+
+C:\>ping 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 4ms, Average = 2ms
+
+#############################################################
+
+Marketing-PC Connectivity Test:
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: github.com/briangeis
+   Link-local IPv6 Address.........: FE80::202:17FF:FEBE:570E
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.36.16
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.36.1
+
+C:\>ping 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 4ms, Average = 2ms
+
+#############################################################
+
+Logistics-PC Connectivity Test:
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: github.com/briangeis
+   Link-local IPv6 Address.........: FE80::201:C9FF:FE11:AE06
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.40.16
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.40.1
+
+C:\>ping 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 4ms, Average = 3ms
+
+#############################################################
+
+Management-PC Connectivity Test:
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: github.com/briangeis
+   Link-local IPv6 Address.........: FE80::201:C7FF:FE9D:61D8
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.60.16
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.60.1
+
+C:\>ping 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=6ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 6ms, Average = 3ms

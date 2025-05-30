@@ -1,0 +1,31 @@
+Marketing-PC Floating Static Default Route Test:
+
+C:\>ping -n 20 200.1.1.1
+
+Pinging 200.1.1.1 with 32 bytes of data:
+
+Reply from 200.1.1.1: bytes=32 time=8ms TTL=252
+Reply from 200.1.1.1: bytes=32 time=5ms TTL=252
+Reply from 200.1.1.1: bytes=32 time=5ms TTL=252
+Reply from 200.1.1.1: bytes=32 time=9ms TTL=252
+Reply from 200.1.1.1: bytes=32 time=6ms TTL=252
+Reply from 200.1.1.1: bytes=32 time=7ms TTL=252
+Request timed out.
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=4ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=1ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+Reply from 200.1.1.1: bytes=32 time=3ms TTL=253
+
+Ping statistics for 200.1.1.1:
+    Packets: Sent = 20, Received = 19, Lost = 1 (5% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 9ms, Average = 4ms
