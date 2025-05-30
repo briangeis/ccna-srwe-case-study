@@ -14,7 +14,7 @@ required that I build and configure a complex network on physical equipment.
 * [Addressing Table](#addressing-table)
 * [Router Configuration](#router-configuration)
 * [Switch Configuration](#switch-configuration)
-* [Alpine Linux Host Configuration](#alpine-linux-host-configuration)
+* [Linux Host Configuration](#linux-host-configuration)
 * [Deliverables](#deliverables)
 * [License](#license)
 * [References](#references)
@@ -432,7 +432,7 @@ required that I build and configure a complex network on physical equipment.
 * Activated Dynamic ARP Inspection (DAI) globally
 * Configure links to routers as trusted
 
-## Alpine Linux Host Configuration
+## Linux Host Configuration
 
 Set host names:
 ```
