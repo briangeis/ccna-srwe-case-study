@@ -6,6 +6,28 @@ CCNA: Switching, Routing, and Wireless Essentials course.
 The case study was designed to test skills gained throughout the course and
 required that I build and configure a complex network on physical equipment.
 
+## Table of Contents
+
+* [Network Topology](#network-topology)
+* [Skills Demonstrated](#skills-demonstrated)
+* [Software and Devices Used](#software-and-devices-used)
+  - [GNS3 Simulation](#gns3-simulation)
+  - [Cisco Packet Tracer Simulation](#cisco-packet-tracer-simulation)
+* [Addressing Table](#addressing-table)
+* [Router Configuration](#router-configuration)
+  - [Basic Router Configuration](#basic-router-configuration)
+  - [Extended Router Configuration](#extended-router-configuration)
+* [Switch Configuration](#switch-configuration)
+  - [Basic Switch Configuration](#basic-switch-configuration)
+  - [Extended Switch Configuration](#extended-switch-configuration)
+* [Alpine Linux Host Configuration](#alpine-linux-host-configuration)
+* [Deliverables](#deliverables)
+  - [Original Case Study Deliverables](#original-case-study-deliverables)
+  - [GNS3 Deliverables](#gns3-deliverables)
+  - [Packet Tracer Deliverables](#packet-tracer-deliverables)
+* [License](#license)
+* [References](#references)
+
 ## Network Topology
 
 ![Network Topology Diagram](topology.png)
@@ -20,6 +42,7 @@ required that I build and configure a complex network on physical equipment.
 * VLAN and switchport VLAN membership configuration
 * EtherChannel configuration
 * Static trunking and Dynamic Trunking Protocol (DTP)
+* Spanning Tree Protocol (STP) configuration
 * Switch security, port security, PortFast, and BPDU Guard
 * Dynamic ARP Inspection (DAI) and trusted ports
 
