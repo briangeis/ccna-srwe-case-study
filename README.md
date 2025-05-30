@@ -13,13 +13,13 @@ required that I build and configure a complex network on physical equipment.
 ## Skills Demonstrated
 
 * Cisco router and switch configuration
+* Inter-VLAN routing (router-on-a-stick) configuration
+* Hot Standby Router Protocol (HSRP) configuration
+* Dynamic Host Configuration Protocol (DHCP) pools and scopes
+* IPv4 floating static, default, and host routes
 * VLAN and switchport VLAN membership configuration
 * EtherChannel configuration
 * Static trunking and Dynamic Trunking Protocol (DTP)
-* Inter-VLAN routing (router-on-a-stick) configuration
-* IPv4 floating static, default, and host routes
-* Hot Standby Router Protocol (HSRP) configuration
-* Dynamic Host Configuration Protocol (DHCP) pools and scopes
 * Switch security, including port security, Dynamic ARP Inspection (DAI),
   PortFast, and BPDU Guard
 
@@ -37,6 +37,9 @@ required that I build and configure a complex network on physical equipment.
 ### Cisco Packet Tracer Simulation
 
 * Cisco Packet Tracer v8.2.2
+* Cisco 2901 Router (x4)
+* Cisco 2960 Switch (x4)
+* Packet Tracer Simulated PC (x5)
 
 ## Addressing Table
 
@@ -138,7 +141,7 @@ required that I build and configure a complex network on physical equipment.
   </tr>
   <tr>
     <td>HSRP</td>
-    <td colspan="2">Virtual Gateway for R1 and R2</td>
+    <td colspan="2">Virtual Gateway (VLAN 10)</td>
     <td>192.168.10.3</td>
     <td>255.255.255.0</td>
   </tr>
@@ -445,7 +448,7 @@ nameserver 8.8.8.8
 
 ## Deliverables
 
-**The original case study required the following deliverables:**
+### Original Case Study Deliverables
 
 * Provide configurations from all Cisco devices
 * Demonstrate connectivity from all endpoint hosts
@@ -457,6 +460,28 @@ nameserver 8.8.8.8
   - Run a traceroute from Admin-PC to the ISP router
   - Break the link between R1 and R1-LAN-SW-FL1
   - Rerun the traceroute and confirm the path uses R2
+
+### GNS3 Deliverables
+
+* Configurations for all devices:
+  [/gns3-configs/](/gns3-configs/)
+* Connectivity tests from all hosts:
+  [/deliverables/gns3-host-tests.txt](/deliverables/gns3-host-tests.txt)
+* Floating static default route test:
+  [/deliverables/gns3-route-test.txt](/deliverables/gns3-route-test.txt)
+* HSRP functionality test:
+  [/deliverables/gns3-hsrp-test.txt](/deliverables/gns3-hsrp-test.txt)
+
+### Packet Tracer Deliverables
+
+* Configurations for all devices:
+  [/pt-configs/](/pt-configs/)
+* Connectivity tests from all hosts:
+  [/deliverables/pt-host-tests.txt](/deliverables/pt-host-tests.txt)
+* Floating static default route test:
+  [/deliverables/pt-route-test.txt](/deliverables/pt-route-test.txt)
+* HSRP functionality test:
+  [/deliverables/pt-hsrp-test.txt](/deliverables/pt-hsrp-test.txt)
 
 ## License
 
